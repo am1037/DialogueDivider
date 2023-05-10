@@ -1,26 +1,27 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        Map<String, String> map = new HashMap<>();
-
-        BufferedReader reader = null;
         File[] texts = new File("texts\\").listFiles();
+        File file = texts[0];
+
+        Text text = new Text(file);
+        System.out.println(text.getTitle());
+        for (Content content : text.getContents()) {
+            System.out.println(content);
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
         try {
-            map.put("Title", texts[0].getName());
-            reader = new BufferedReader(new FileReader(texts[0]));
-            StringBuilder sb = new StringBuilder();
-            int c;
-            while ((c=reader.read()) != -1) {
-                sb.append((char) c);
-            }
-            map.put("Content", sb.toString());
-        } catch (Exception e) {
+            String json = mapper.writeValueAsString(text);
+            mapper.writeValue(new File("outputs\\"+text.getTitle()+".json"), text);
+            System.out.println(json);
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

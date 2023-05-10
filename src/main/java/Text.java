@@ -8,6 +8,17 @@ import java.util.StringTokenizer;
 public class Text {
     String title;
     List<Content> contents = new ArrayList<>();
+    int dOpen = '“';
+    int dClose = '”';
+
+    public void setdOpen(int dOpen) {
+        this.dOpen = dOpen;
+    }
+
+    public void setdClose(int dClose) {
+        this.dClose = dClose;
+    }
+
     public enum Type {
         NARRATION, DIALOGUE, crlf
     }
@@ -16,6 +27,12 @@ public class Text {
     }
 
     public Text(File file) {
+        setByFile(file);
+    }
+
+    public Text(File file, int dOpen, int dClose) {
+        this.dOpen = dOpen;
+        this.dClose = dClose;
         setByFile(file);
     }
 
@@ -32,8 +49,6 @@ public class Text {
                 reader = new BufferedReader(new FileReader(file));
                 StringBuilder sb = new StringBuilder();
                 int c;
-                int dOpen = '“';
-                int dClose = '”';
                 while ((c=reader.read()) != -1) {
                     if (c == dOpen) {
                         String temp = sb.toString().trim();
@@ -50,7 +65,7 @@ public class Text {
                         sb = new StringBuilder();
                         //sb.append((char) c);
                         while ((c=reader.read()) != dClose) {
-                            System.out.println((char) c+ " " + c);
+                            //System.out.println((char) c+ " " + c);
                             sb.append((char) c);
                         }
                         //sb.append((char) c);

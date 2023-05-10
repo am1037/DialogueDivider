@@ -17,7 +17,7 @@ public class Main {
         int index = sc.nextInt();
         File file = texts[index];
 
-        Text text = new Text(file);
+        Text text = new Text(file, '『', '』');
         System.out.println(text.getTitle());
         for (Content content : text.getContents()) {
             System.out.println(content);

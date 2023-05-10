@@ -23,13 +23,6 @@ public class Main {
             System.out.println(content);
         }
 
-        ObjectMapper mapper = new ObjectMapper();
-        try {
-            String json = mapper.writeValueAsString(text);
-            mapper.writeValue(new File("outputs\\"+text.getTitle()+".json"), text);
-            System.out.println(json);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        text.printJsonFile();
     }
 }

@@ -1,6 +1,10 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
@@ -106,6 +110,17 @@ public class Text {
                 "title='" + title + '\'' +
                 ", contents=" + contents +
                 '}';
+    }
+
+    public void printJsonFile(){
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            String json = mapper.writeValueAsString(this);
+            mapper.writeValue(new File("outputs\\"+this.getTitle()+".json"), this);
+            System.out.println(json);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

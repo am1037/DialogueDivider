@@ -1,5 +1,6 @@
+package com.jmk.model.text2json;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,7 +8,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 public class Text {
     String title;
@@ -106,7 +106,7 @@ public class Text {
 
     @Override
     public String toString() {
-        return "Text{" +
+        return "com.jmk.text2json.Text{" +
                 "title='" + title + '\'' +
                 ", contents=" + contents +
                 '}';
@@ -124,51 +124,3 @@ public class Text {
     }
 }
 
-class Content {
-    Text.Type type;
-    String speaker="ACTOR";
-    String text;
-    public Content(Text.Type type, String text) {
-        this.type = type;
-        this.text = text;
-    }
-
-    public Content(Text.Type type, String speaker, String text) {
-        this.type = type;
-        this.speaker = speaker;
-        this.text = text;
-    }
-
-    @Override
-    public String toString() {
-        return "Content{" +
-                "type=" + type +
-                ", speaker='" + speaker + '\'' +
-                ", text='" + text + '\'' +
-                '}';
-    }
-
-    public Text.Type getType() {
-        return type;
-    }
-
-    public void setType(Text.Type type) {
-        this.type = type;
-    }
-
-    public String getSpeaker() {
-        return speaker;
-    }
-
-    public void setSpeaker(String speaker) {
-        this.speaker = speaker;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-}

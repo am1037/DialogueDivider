@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="DialogueDivider:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/DialogueDivider_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="DialogueDivider" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.0.1.RELEASE" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.14.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.14.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.14.2" />
+          <element id="library" level="project" name="Maven: com.theokanning.openai-gpt3-java:api:0.12.0" />
+          <element id="library" level="project" name="Maven: com.theokanning.openai-gpt3-java:client:0.12.0" />
+          <element id="library" level="project" name="Maven: com.squareup.retrofit2:retrofit:2.9.0" />
+          <element id="library" level="project" name="Maven: com.squareup.okhttp3:okhttp:3.14.9" />
+          <element id="library" level="project" name="Maven: com.squareup.okio:okio:1.17.2" />
+          <element id="library" level="project" name="Maven: com.squareup.retrofit2:adapter-rxjava2:2.9.0" />
+          <element id="library" level="project" name="Maven: io.reactivex.rxjava2:rxjava:2.0.0" />
+          <element id="library" level="project" name="Maven: org.reactivestreams:reactive-streams:1.0.3" />
+          <element id="library" level="project" name="Maven: com.squareup.retrofit2:converter-jackson:2.9.0" />
+          <element id="library" level="project" name="Maven: com.theokanning.openai-gpt3-java:service:0.12.0" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="DialogueDivider/web/Web" />
+    </root>
+  </artifact>
+</component>

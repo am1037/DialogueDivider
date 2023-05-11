@@ -33,9 +33,9 @@ public class Main2 {
         }catch (Exception e) {
             e.printStackTrace();
         }
-//        Text text = new Text(file);
+//        com.jmk.text2json.Text text = new com.jmk.text2json.Text(file);
 //        System.out.println(text.getTitle());
-//        for (Content content : text.getContents()) {
+//        for (com.jmk.text2json.Content content : text.getContents()) {
 //            System.out.println(content);
 //        }
 

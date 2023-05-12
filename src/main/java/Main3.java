@@ -15,12 +15,12 @@ public class Main3 {
         Scanner sc = new Scanner(System.in);
         String str;
         str = sc.nextLine();
-        while (!str.equals("exit")) {
+        while (!str.equals("!exit")) {
             session.sendMessage(str);
             session.printAsJson();
-            vvr.sendAudioRequest(session.getLastReceivedMessage(), 47);
-            vvr.getAudioQueryResponse().printJsonFile("test.json");
-            vvr.sendSynthesisRequest(47, true, null, "test.json");
+            //vvr.sendAudioRequest(session.getLastReceivedMessage(), 47);
+            //vvr.getAudioQueryResponse().printJsonFile("test.json");
+            //vvr.sendSynthesisRequest(47, true, null, "test.json");
             str = sc.nextLine();
         }
 

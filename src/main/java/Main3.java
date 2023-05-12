@@ -25,16 +25,6 @@ public class Main3 {
             vvr.getAudioQueryResponse().printJsonFile("test.json");
             vvr.sendSynthesisRequest(47, true, null, "test.json");
             str = sc.nextLine();
-
-
-            File a = new File("audio.wav");
-            AudioInputStream b = AudioSystem.getAudioInputStream(a);
-            Clip c = AudioSystem.getClip();
-
-            c.open(b);
-            c.start();
-            System.out.println("再生中");
-            Thread.sleep(c.getMicrosecondLength()/1000);
         }
 
 //        vvr.sendAudioRequest("おはよう。テストです。", 47);

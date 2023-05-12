@@ -5,6 +5,8 @@ out/
 texts/
 outputs/
 target/
+sessions/
+
 
 ### Eclipse ###
 .apt_generated

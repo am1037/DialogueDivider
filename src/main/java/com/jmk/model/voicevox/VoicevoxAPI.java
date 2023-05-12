@@ -109,11 +109,11 @@ public class VoicevoxAPI {
             InputStream inputStream = connection.getInputStream();
 
             // Create a path for the output file
-            Path outputPath = Paths.get("audio.wav");
+            Path outputPath = Paths.get("audio"+System.currentTimeMillis()+".wav");
 
             // Use the Files class to copy the data from the InputStream to the file.
             Files.copy(inputStream, outputPath, StandardCopyOption.REPLACE_EXISTING);
-            System.out.println("Audio file saved: " + System.currentTimeMillis() + outputPath.toString());
+            System.out.println("Audio file saved: "+outputPath.toString());
 
             // Close the connection
             connection.disconnect();

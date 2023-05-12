@@ -22,9 +22,11 @@ public class SessionWithGPT {
     private ChatCompletionRequest ccReq;
     private ChatCompletionResult ccRes;
     private String model = "gpt-4"; //gpt-3.5-turbo, gpt-4
-    private String sessionName = String.valueOf(System.currentTimeMillis());
+    private String sessionName = "gptRequestTest"+String.valueOf(System.currentTimeMillis());
 
-    public void test(String userMessage){
+    private String lastReceivedMessage = null;
+
+    public void sendMessage(String userMessage){
         if (systemMessage != null) {
             cmList.add(systemMessage);
             systemMessage = null;
@@ -37,6 +39,7 @@ public class SessionWithGPT {
         System.out.println("Response sent.");
         ccRes = service.createChatCompletion(ccReq);
         cmList.add(ccRes.getChoices().get(0).getMessage());
+        lastReceivedMessage = ccRes.getChoices().get(0).getMessage().getContent();
         cmList.forEach(System.out::println);
     }
 
@@ -44,12 +47,13 @@ public class SessionWithGPT {
         this.systemMessage = new ChatMessage("system", str);
         cmList.clear();
         cmList.add(systemMessage);
+        setSystemMessage(null);
     }
 
     public void printAsJson(){
         ObjectMapper mapper = new ObjectMapper();
         try {
-            mapper.writeValue(new File("sessions/gptRequestTest"+sessionName+".json"), cmList);
+            mapper.writeValue(new File("sessions/"+sessionName+".json"), cmList);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

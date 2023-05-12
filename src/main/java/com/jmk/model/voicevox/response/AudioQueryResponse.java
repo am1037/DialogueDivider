@@ -44,7 +44,7 @@ public class AudioQueryResponse {
 class AccentPhrase {
     private List<Mora> moras;
     private int accent;
-    private String pause_mora;
+    private Pause_mora pause_mora;
     @JsonProperty("is_interrogative")
     private boolean is_interrogative;
 }
@@ -57,4 +57,14 @@ class Mora {
     private String vowel;
     private Float vowel_length;
     private float pitch;
+}
+
+@Data
+class Pause_mora {
+    private String text;
+    private String consonant;
+    private Float consonant_length;
+    private String vowel;
+    private Float vowel_length;
+    private Float pitch;
 }

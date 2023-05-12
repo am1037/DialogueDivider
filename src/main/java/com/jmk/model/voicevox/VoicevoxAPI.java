@@ -26,6 +26,8 @@ Response를 받아주는 역할
 public class VoicevoxAPI {
     ObjectMapper om = new ObjectMapper();
 
+    String defaultJsonPath = "test.json";
+
     //Request
     URL url;
     HttpURLConnection connection;
@@ -54,8 +56,8 @@ public class VoicevoxAPI {
             //System.out.println("Response Code: " + responseCode);
 
             // Read the response from the input stream
-            StringBuilder stringBuilder = new StringBuilder();
             BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+//            StringBuilder stringBuilder = new StringBuilder();
 //            while ( reader.ready() ) {
 //                stringBuilder.append(reader.readLine());
 //            }
@@ -75,6 +77,9 @@ public class VoicevoxAPI {
         synthesisRequest.setSpeaker(speaker);
         synthesisRequest.setEnable_interrogative_upspeak(enable_interrogative_upspeak);
         synthesisRequest.setCore_version(core_version);
+        if (jsonPath == null) {
+            jsonPath = defaultJsonPath;
+        }
         synthesisRequest.setJsonPath(jsonPath);
 
         try {
